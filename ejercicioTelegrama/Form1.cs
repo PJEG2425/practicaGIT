@@ -10,17 +10,21 @@ namespace ejercicioTelegrama
         private void btnCalcularPrecio_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = 'o';
+            char tipoTelegrama =' '; //Dejamos la variable con un valor nulo, para valorar que opción elige el cliente
             int numPalabras = 0;
             double coste;
 
             // Leo el telegrama
             textoTelegrama = txtTelegrama.Text;
 
-            // telegrama urgente?
-            if (chkUrgente.Checked)
+            // Comprobamos que prioridad de telegrama se ha elegido
+            if (rbOrdinario.Checked)
             {
-                tipoTelegrama = 'u'; // Cambiamos a urgente si el checkbox está marcado
+                tipoTelegrama = 'o';
+            }
+            if (rbUrgente.Checked)
+            {
+                tipoTelegrama = 'u';
             }
 
             // Obtengo el número de palabras que forma el telegrama
